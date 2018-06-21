@@ -18,10 +18,11 @@ namespace Api.Tcc.DAL
                 SqlConnection connectionString = new SqlConnection(ConfigurationManager.ConnectionStrings["Local"].ConnectionString);
 
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "INSERT INTO product_everton (NomeLoja, NomeProduto, PrecoVenda) VALUES (@nomeLoja, @nomeProduto, @precoVenda)";
+                cmd.CommandText = "INSERT INTO product_everton (NomeLoja, NomeProduto, PrecoVenda, Data) VALUES (@nomeLoja, @nomeProduto, @precoVenda, @data)";
                 cmd.Parameters.Add("@nomeLoja", SqlDbType.NVarChar).Value = loja;
                 cmd.Parameters.Add("@nomeProduto", SqlDbType.NVarChar).Value = produto.Nome;
                 cmd.Parameters.Add("@precoVenda", SqlDbType.Money).Value = produto.Preco;
+                cmd.Parameters.Add("@data", SqlDbType.DateTime).Value = DateTime.Now;
                 cmd.Connection = connectionString;
 
                 connectionString.Open();

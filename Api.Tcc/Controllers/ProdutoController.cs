@@ -17,7 +17,7 @@ namespace Api.Tcc.Controllers
         /// Insere o preço de um produto de uma loja
         /// </summary>
         [HttpPost]
-        [Route("dados/{loja}")]
+        [Route("api/{loja}")]
         [SwaggerResponse(HttpStatusCode.Created, Description = "Boolean com o resultado", Type = typeof(bool))]
         [SwaggerResponse(HttpStatusCode.InternalServerError, Description = "Erro no processamento da operação", Type = typeof(bool))]
         public IHttpActionResult Post(string loja, [FromBody]Produto produto)

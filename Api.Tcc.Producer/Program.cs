@@ -35,11 +35,11 @@ namespace Api.Tcc.Producer
 
                 foreach (var produtoAtual in lojaAtual.Value)
                 {
-                    double preco = random.NextDouble() * (0.1 - 100) + 0.1;
+                    double preco = random.NextDouble() * (100 - 0.1) + 0.1;
 
                     Produto produto = new Produto();
                     produto.Nome = produtoAtual;
-                    produto.Preco = (decimal)preco;
+                    produto.Preco = (decimal)System.Math.Round(preco, 2);
 
                     PostProduto(loja, produto);
                 }
@@ -59,7 +59,7 @@ namespace Api.Tcc.Producer
 
                     data = Newtonsoft.Json.JsonConvert.SerializeObject(produto);
 
-                    client.UploadString($"http://localhost:58793/{loja}", data);
+                    client.UploadString($"http://localhost:58793/api/{loja}", data);
                 }
                 catch (WebException e)
                 {
