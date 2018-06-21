@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Tcc", "Api.Tcc\Api.Tcc.csproj", "{BF5847A1-B1A5-4F6F-93F6-4A453559163D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Tcc.Producer", "Api.Tcc.Producer\Api.Tcc.Producer.csproj", "{4E6F473B-DFFF-407F-9D82-9B8B19BE4127}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BF5847A1-B1A5-4F6F-93F6-4A453559163D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF5847A1-B1A5-4F6F-93F6-4A453559163D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF5847A1-B1A5-4F6F-93F6-4A453559163D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E6F473B-DFFF-407F-9D82-9B8B19BE4127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E6F473B-DFFF-407F-9D82-9B8B19BE4127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E6F473B-DFFF-407F-9D82-9B8B19BE4127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E6F473B-DFFF-407F-9D82-9B8B19BE4127}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
