@@ -29,19 +29,22 @@ namespace Api.Tcc.Producer
 
             //int index = random.Next(lojas.Count);
 
-            foreach (var lojaAtual in lojas)
+            for (int i = 0; i < 10000; i++)
             {
-                string loja = lojaAtual.Key;
-
-                foreach (var produtoAtual in lojaAtual.Value)
+                foreach (var lojaAtual in lojas)
                 {
-                    double preco = random.NextDouble() * (100 - 0.1) + 0.1;
+                    string loja = lojaAtual.Key;
 
-                    Produto produto = new Produto();
-                    produto.Nome = produtoAtual;
-                    produto.Preco = (decimal)System.Math.Round(preco, 2);
+                    foreach (var produtoAtual in lojaAtual.Value)
+                    {
+                        double preco = random.NextDouble() * (100 - 0.1) + 0.1;
 
-                    PostProduto(loja, produto);
+                        Produto produto = new Produto();
+                        produto.Nome = produtoAtual;
+                        produto.Preco = (decimal)System.Math.Round(preco, 2);
+
+                        PostProduto(loja, produto);
+                    }
                 }
             }
         }
@@ -60,6 +63,8 @@ namespace Api.Tcc.Producer
                     data = Newtonsoft.Json.JsonConvert.SerializeObject(produto);
 
                     client.UploadString($"http://localhost:58793/api/{loja}", data);
+
+                    Console.WriteLine("Produto Inserido.");
                 }
                 catch (WebException e)
                 {
